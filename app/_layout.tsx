@@ -15,14 +15,27 @@ export default function Root() {
 function RootNavigator() {
   const { session } = useSession();
 
+  console.log('session', session);
+  const isLoggedIn = session !== null;
+  console.log('isLogged In', isLoggedIn);
   return (
     <Stack>
-      <Stack.Protected guard={!!session}>
-        <Stack.Screen name="(app)" />
+      <Stack.Protected guard={isLoggedIn}>
+        <Stack.Screen
+          name="(app)"
+          options={{ 
+            headerShown: false
+          }}
+        />
       </Stack.Protected>
 
-      <Stack.Protected guard={!session}>
-        <Stack.Screen name="sign-in" />
+      <Stack.Protected guard={!isLoggedIn}>
+        <Stack.Screen
+          name="sign-in"
+          options={{ 
+            headerShown: false
+          }}
+        />
       </Stack.Protected>
     </Stack>
   );
