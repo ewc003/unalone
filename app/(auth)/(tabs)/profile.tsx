@@ -3,7 +3,7 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { IconSymbol } from '@/components/ui/IconSymbol';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { useSession } from '../../ctx';
+import { useSession } from '../../../ctx';
 
 export default function ProfileScreen() {
   const { signOut } = useSession();

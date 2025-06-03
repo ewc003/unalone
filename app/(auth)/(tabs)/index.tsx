@@ -6,7 +6,7 @@ import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 
-import { useSession } from '../../ctx';
+import { useSession } from '../../../ctx';
 
 export default function HomeScreen() {
   const { signOut } = useSession();
